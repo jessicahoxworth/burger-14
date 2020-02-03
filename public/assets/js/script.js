@@ -9,6 +9,7 @@ $(document).ready(function () {
             method: "PUT",
             url: "/burger/" + burger_id
         }).then(function (data) {
+            // reload page to display devoured burger in proper column
             location.reload();
         });
 

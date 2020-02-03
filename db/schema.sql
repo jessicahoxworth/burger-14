@@ -4,11 +4,11 @@ USE burgers_db;
 
 CREATE TABLE burgers
 (
-    id int
-    AUTO_INCREMENT NOT NULL,
+    id int NOT NULL
+    AUTO_INCREMENT,
     burger_name varchar
     (255) NOT NULL,
-    devoured BOOLEAN DEFAULT false,
+    devoured BOOL DEFAULT false,
     PRIMARY KEY
     (id)
 );

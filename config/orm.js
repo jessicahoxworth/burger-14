@@ -1,5 +1,5 @@
 // Import MySQL connection.
-var connection = require("./connection.js");
+var connection = require("../config/connection.js");
 
 // Helper function for SQL syntax.
 function printQuestionMarks(num) {
@@ -18,6 +18,12 @@ function objToSql(ob) {
 
     // loop through the keys and push the key/value as a string int arr
     for (var key in ob) {
+        var value = ob[key];
+        if (Object.hasOwnProperty.call(ob, key)) {
+            if (typeof value === "string" && value.indexOf(" ") >= 0) {
+                value - " ' " + value + " ' ";
+            }
+        }
         arr.push(key + "=" + ob[key]);
     }
     return arr.toString();
@@ -77,8 +83,24 @@ var orm = {
 
             cb(result);
         });
-    }
+    },
 
+    //delete function
+
+    delete: function (table, condition, cb) {
+        var queryString = "DELETE FROM" + table;
+        queryString += "WHERE";
+        queryString += condition;
+
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
+
+    }
 
 };
 
