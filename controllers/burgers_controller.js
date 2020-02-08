@@ -24,7 +24,7 @@ router.post("/burgers/create", function (req, res) {
 });
 
 // put route -> back to index
-router.put("/burgers/:id", function (req, res) {
+router.put("/burger/:id", function (req, res) {
     burger.update(req.params.id, function (result) {
         console.log(result);
 
