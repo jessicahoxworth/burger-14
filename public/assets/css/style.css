@@ -1,12 +1,17 @@
 body {
   width: 99%;
   height: 900px;
-  background-color: #fc6;
+  background-color: rgb(53, 119, 53);
+}
+
+img {
+  width: 20vh;
 }
 
 #top-bar {
   margin-top: 28px;
 }
+
 
 .spacing-reset {
   padding: 0;
@@ -19,6 +24,7 @@ body {
   margin: 0;
   list-style-type: none;
   border: 0;
+ 
 }
 
 @media (min-width: 1200px) {
@@ -52,10 +58,18 @@ body {
   border-color: black;
   border-style: solid;
   border-width: 3px;
+  display:inline-block;
+  
 }
 
 .button-size {
   padding-bottom: 20px;
+
+}
+
+.delete {
+  display:inline-block;
+
 }
 
 #text-enter-button {
@@ -64,5 +78,5 @@ body {
 }
 
 h1 {
-  color: #f30;
+  color: rgb(0, 0, 0);
 }

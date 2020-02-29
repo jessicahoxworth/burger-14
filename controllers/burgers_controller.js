@@ -21,17 +21,25 @@ router.post("/burgers/create", function (req, res) {
         console.log(result);
         res.redirect("/");
     });
+
 });
+
+router.delete("burger/:id", function (req, res) {
+    burger.delete(req.params.id, function () {
+        res.redirect("/")
+    });
+});
+
 
 // put route -> back to index
 router.put("/burger/:id", function (req, res) {
     burger.update(req.params.id, function (result) {
         console.log(result);
 
-
-
         res.sendStatus(200);
+
     });
+
 });
 
 module.exports = router;

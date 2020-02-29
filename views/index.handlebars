@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center" id="top-bar">
-            {{!-- <img src="/assets/images/burger.png" alt="burger" /> --}}
+            <img src="/assets/images/pngwave.png" alt="burger" />
             <h1> Eat-Da-Burger! </h1>
         </div>
         <div class="col-md-6 text-center" class="task">
@@ -18,6 +18,11 @@
                         <input input type="hidden" class="burger_id" type="text" value={{this.id}}><br>
                         <button type="submit" class="btn btn-default">Devour it!</button>
                     </form>
+
+                    <form class="data-burgerid button-size" action="/{{this.id}}" method="PUT">
+                        <button class="btn btn-default delburger burgerid">X</button>
+                    </form>
+
                 </div>
                 {{/unless}}
                 {{/each}}

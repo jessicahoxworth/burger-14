@@ -30,4 +30,21 @@ $(document).ready(function () {
                 location.reload();
             });
     })
+
+    //delete burger from list
+
+    $(".delburger").on("delete", function (event) {
+
+        var id = $(this).data("burger_id");
+
+        $.ajax("/api/burgers/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("deleted id ", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
 });
