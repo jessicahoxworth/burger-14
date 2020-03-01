@@ -25,7 +25,7 @@ router.post("/burgers/create", function (req, res) {
 });
 
 
-router.deleteBurger('/api/burger/:_id', function (req, res) {
+router.delete('/api/burger/:_id', function (req, res) {
     var id = req.params._id;
     burger.delete(id, function (err, burger) {
         if (err) {
