@@ -19,8 +19,9 @@
                         <button type="submit" class="btn btn-default">Devour it!</button>
                     </form>
 
-                    <form class="data-burgerid button-size" action="/{{this.id}}" method="PUT">
-                        <button class="btn btn-default delburger burgerid">X</button>
+                    <form class="data-burgerid button-size" action="/{{this.id}}" type="DELETE">
+                        <input input type="hidden" class="burger_id" type="text" value={{this.id}}><br>
+                        <button type="submit" class="btn btn-default deleteBurger burgerid">Remove</button>
                     </form>
 
                 </div>

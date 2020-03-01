@@ -9,7 +9,6 @@ $(document).ready(function () {
             method: "PUT",
             url: "/burger/" + burger_id
         }).then(function (data) {
-            // reload page to display devoured burger in proper column
             location.reload();
         });
 
@@ -33,18 +32,17 @@ $(document).ready(function () {
 
     //delete burger from list
 
-    $(".delburger").on("delete", function (event) {
+    $(".data-burgerid").on("submit", function (event) {
+        event.preventDefault();
 
-        var id = $(this).data("burger_id");
-
-        $.ajax("/api/burgers/" + id, {
+        var burger_id = $(this).children(".burger_id").val();
+        console.log(burger_id);
+        $.ajax({
+            url: "/burger/" + burger_id,
             type: "DELETE"
-        }).then(
-            function () {
-                console.log("deleted id ", id);
-                // Reload the page to get the updated list
-                location.reload();
-            }
-        );
+        }).then(function (data) {
+            location.reload();
+        });
+
     });
 });

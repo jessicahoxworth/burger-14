@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 var burger = require("../models/burger.js");
 
-// get route -> index
+
 router.get("/", function (req, res) {
     res.redirect("/burgers");
 });
@@ -14,7 +14,7 @@ router.get("/burgers", function (req, res) {
     });
 });
 
-// post route -> back to index
+
 router.post("/burgers/create", function (req, res) {
 
     burger.create(req.body.burger_name, function (result) {
@@ -24,14 +24,19 @@ router.post("/burgers/create", function (req, res) {
 
 });
 
-router.delete("burger/:id", function (req, res) {
-    burger.delete(req.params.id, function () {
-        res.redirect("/")
+
+router.deleteBurger('/api/burger/:_id', function (req, res) {
+    var id = req.params._id;
+    burger.delete(id, function (err, burger) {
+        if (err) {
+            throw err;
+        }
+        res.redirect("/");
     });
 });
 
 
-// put route -> back to index
+
 router.put("/burger/:id", function (req, res) {
     burger.update(req.params.id, function (result) {
         console.log(result);
