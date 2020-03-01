@@ -2,7 +2,7 @@
   "name": "burger-14",
   "version": "1.0.0",
   "description": "-Node \r -Express \r -MySQL \r -Handlebars \r -Jquery",
-  "main": "server.js",
+  "main": "connection.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
